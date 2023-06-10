@@ -1,0 +1,21 @@
+{
+  "fluid.kubejs.red_dye_fluid": "Red Dye",
+  "fluid.kubejs.orange_dye_fluid": "Orange Dye",
+  "fluid.kubejs.yellow_dye_fluid": "Yellow Dye",
+  "fluid.kubejs.lime_dye_fluid": "Lime Dye",
+  "fluid.kubejs.green_dye_fluid": "Green Dye",
+  "fluid.kubejs.blue_dye_fluid": "Blue Dye",
+  "fluid.kubejs.light_blue_dye_fluid": "Light Blue Dye",
+  "fluid.kubejs.cyan_dye_fluid": "Cyan Dye",
+  "fluid.kubejs.purple_dye_fluid": "Purple Dye",
+  "fluid.kubejs.magenta_dye_fluid": "Magenta Dye",
+  "fluid.kubejs.pink_dye_fluid": "Pink Dye",
+  "fluid.kubejs.brown_dye_fluid": "Brown Dye",
+  "fluid.kubejs.black_dye_fluid": "Black Dye",
+  "fluid.kubejs.gray_dye_fluid": "Gray Dye",
+  "fluid.kubejs.light_gray_dye_fluid": "Light Gray Dye",
+  "fluid.kubejs.white_dye_fluid": "White Dye",
+  
+  "item.kubejs.dye_base": "Dye Base",
+  "itemGroup.kubejs.dye_fluid": "Dye Fluid (KubeJS by Mango)"
+}
