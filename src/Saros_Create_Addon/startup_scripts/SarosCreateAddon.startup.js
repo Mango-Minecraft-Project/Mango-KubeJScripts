@@ -27,7 +27,7 @@ if (checkConfigSwitch('saros-create-addon')) {
   StartupEvents.registry('item', event => {
     for (let id of SarosCreate.itemIds) {
       let itemObject = event.create(id)
-        .texture(`kubejs:item/saros_create_addon/${id}`)
+        .texture(`saros_create_addon:item/${id}`)
         .group('kubejs.saros_create_addon')
         .tag('kubejs:saros_create_addon')
 

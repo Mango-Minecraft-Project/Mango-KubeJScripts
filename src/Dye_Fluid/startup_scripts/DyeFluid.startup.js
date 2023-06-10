@@ -33,7 +33,6 @@ if (checkConfigSwitch('dye-fluid')) {
   StartupEvents.registry('fluid', event => {
     for (let [colorName, colorCode] of Object.entries(DyeFluid.colorTable)) {
       let fluidObject = event.create(`${colorName}_dye_fluid`)
-        // .displayName(Text.translate(`fluid.kubejs.${colorName}_dye_fluid`))
         .thickTexture(colorCode)
         .flowingTexture('minecraft:block/water_flow')
         .stillTexture('minecraft:block/water_still')
@@ -55,7 +54,7 @@ if (checkConfigSwitch('dye-fluid')) {
 
   StartupEvents.registry('item', event => {
     let dye_base = event.create('dye_base')
-      .texture('kubejs:item/dye_fluid/color_base')
+      .texture('dye_fluid:item/color_base')
       .tag('kubejs:dye_fluid')
       .tag('kubejs:dye_fluid/dye_base')
       .group('kubejs.dye_fluid')
