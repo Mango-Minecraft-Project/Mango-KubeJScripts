@@ -2,6 +2,8 @@
 
 將農夫樂事的一些配方連動到動力機械中
 
+同步發布到[CarbonKJS - Create Delight](https://github.com/carbon-kjs/create-delight)
+
 ## 前置
 
 - 模組
