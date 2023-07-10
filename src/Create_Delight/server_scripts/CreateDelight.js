@@ -1,15 +1,22 @@
 if (checkConfigSwitch('create-delight')) {
-  ServerEvents.recipes(event => {
-    let knivesTag = Platform.isFabric ? "c:tools/knives" : "forge:tools/knives"
+  ServerEvents.recipes((event) => {
+    const knivesTag = Platform.isFabric ? "c:tools/knives" : "forge:tools/knives"
 
     event.forEachRecipe(
-      { type: "farmersdelight:cutting", tool: { tag: knivesTag } },
+      { type: "farmersdelight:cutting" },
       recipe => {
-        let { originalRecipeIngredients, originalRecipeResult } = recipe
-        event.recipes.create.deploying(
-          [originalRecipeResult],
-          [originalRecipeIngredients, `#${knivesTag}`]
-        )
+        const originalRecipe = JSON.parse(recipe.json.toString())
+        
+        if (originalRecipe.tool?.tag == knivesTag) {
+          event.recipes.create.deploying(
+            [originalRecipe.result.map(item => {
+              let str = 'tag' in item ? '#' + item.tag : item.item
+              if ('count' in item) { str = item.count + 'x ' + str }
+              return Item.of(str)
+            })[0]],
+            originalRecipe.ingredients.concat([`#${knivesTag}`])
+          ).id('kubejs:create_delight/' + (recipe.getId() + '').path)
+        }
       }
     )
   })
