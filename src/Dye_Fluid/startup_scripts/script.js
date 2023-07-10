@@ -1,13 +1,17 @@
 // priority: 0
 
 if (checkConfigSwitch("dye-fluid")) {
-  let { createCreativeTab } = global.functions.dev;
-  let { toAmount } = global.functions.fluid;
+  const {
+    functions: {
+      dev: { createCreativeTab },
+      fluid: { toAmount },
+    },
+  } = global;
 
   createCreativeTab("kubejs", "dye_fluid", "minecraft:lime_dye");
 
   global.addon.DyeFluid = {};
-  let { DyeFluid } = global.addon;
+  const { DyeFluid } = global.addon;
 
   DyeFluid.colorTable = {
     red: 0x861f20,
@@ -32,7 +36,7 @@ if (checkConfigSwitch("dye-fluid")) {
     Fluid.of(`kubejs:${colorName}_dye_fluid`, toAmount(amount || 1000));
 
   StartupEvents.registry("fluid", (event) => {
-    for (let [colorName, colorCode] of Object.entries(DyeFluid.colorTable)) {
+    for (const [colorName, colorCode] of Object.entries(DyeFluid.colorTable)) {
       let fluidObject = event
         .create(`${colorName}_dye_fluid`)
         .thickTexture(colorCode)
@@ -55,7 +59,7 @@ if (checkConfigSwitch("dye-fluid")) {
   });
 
   StartupEvents.registry("item", (event) => {
-    let dye_base = event
+    const dye_base = event
       .create("dye_base")
       .texture("dye_fluid:item/color_base")
       .tag("kubejs:dye_fluid")

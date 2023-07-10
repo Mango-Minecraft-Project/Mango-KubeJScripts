@@ -4,7 +4,7 @@ ServerEvents.tick((event) => {
   const { server } = event;
 
   if (!(server.tickCount % (20 * seconds))) {
-    let entities = server.entities.filter(
+    const entities = server.entities.filter(
       (entity) => entity.type == "minecraft:item" && entity.onGround
     );
     server.runCommandSilent("kill @e[type=item, nbt={OnGround: 1b}]");

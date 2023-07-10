@@ -1,8 +1,8 @@
 if (checkConfigSwitch("saros-create-addon")) {
-  let { toAmount } = global.functions.fluid;
+  const { toAmount } = global.functions.fluid;
 
   ServerEvents.recipes((event) => {
-    let { minecraft, create } = event.recipes;
+    const { minecraft, create } = event.recipes;
 
     create.crushing(
       [
@@ -20,7 +20,7 @@ if (checkConfigSwitch("saros-create-addon")) {
       ["kubejs:raw_diamond"]
     );
 
-    let ids = {
+    const ids = {
       "kubejs:dirty_netherite_1": "minecraft:diamond",
       "kubejs:dirty_netherite_2": "kubejs:dirty_netherite_1",
       "kubejs:dirty_netherite_3": "kubejs:dirty_netherite_2",
@@ -28,7 +28,7 @@ if (checkConfigSwitch("saros-create-addon")) {
       "kubejs:dirty_netherite_5": "kubejs:dirty_netherite_4",
       "kubejs:dirty_netherite_final": "kubejs:dirty_netherite_5",
     };
-    for (let [output, input] of Object.entries(ids)) {
+    for (const [output, input] of Object.entries(ids)) {
       create.pressing([Item.of(output).withChance(0.8)], [input]);
     }
 
@@ -42,7 +42,7 @@ if (checkConfigSwitch("saros-create-addon")) {
       "minecraft:netherite_scrap": ["kubejs:netherite_scrap_final", "smelting"],
     };
 
-    for (let [output, [input, recipeType]] of Object.entries(ids)) {
+    for (const [output, [input, recipeType]] of Object.entries(ids)) {
       switch (recipeType) {
         case "smelting":
           minecraft.smelting(output, input).cookingTime(500);

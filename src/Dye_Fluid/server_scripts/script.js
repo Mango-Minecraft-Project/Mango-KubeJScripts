@@ -1,6 +1,10 @@
 if (checkConfigSwitch("dye-fluid")) {
-  let { DyeFluid } = global.addon;
-  let { toAmount } = global.functions.fluid;
+  const {
+    addon: { DyeFluid },
+    functions: {
+      fluid: { toAmount },
+    },
+  } = global.addon;
 
   DyeFluid.mixingTable = {
     orange: [["red", "yellow"]],
@@ -29,9 +33,9 @@ if (checkConfigSwitch("dye-fluid")) {
   };
 
   ServerEvents.recipes((event) => {
-    let { minecraft, create } = event.recipes;
+    const { minecraft, create } = event.recipes;
 
-    for (let colorName of Object.keys(DyeFluid.colorTable)) {
+    for (const colorName of Object.keys(DyeFluid.colorTable)) {
       create.mixing(
         // dye[item] + water[fluid] = dye[fluid]
         [DyeFluid.getFluid(colorName)],
@@ -45,12 +49,13 @@ if (checkConfigSwitch("dye-fluid")) {
         [`minecraft:${colorName}_dye`],
         ["kubejs:dye_base", DyeFluid.getFluid(colorName)]
       );
+
       if (colorName in DyeFluid.mixingTable) {
         // dye[fluid] + dye[fluid] + ... = dye[fluid]
-        for (let ingredient of DyeFluid.mixingTable[colorName].values()) {
-          let inputs = [],
-            totalCount = ingredient.length;
-          for (let color of ingredient) {
+        for (const ingredient of DyeFluid.mixingTable[colorName].values()) {
+          const inputs = [];
+          const totalCount = ingredient.length;
+          for (const color of ingredient) {
             inputs.push(DyeFluid.getFluid(color, 100));
           }
           create.mixing(

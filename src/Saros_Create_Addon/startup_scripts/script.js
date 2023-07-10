@@ -1,5 +1,5 @@
 if (checkConfigSwitch("saros-create-addon")) {
-  let { createCreativeTab } = global.functions.dev;
+  const { createCreativeTab } = global.functions.dev;
   createCreativeTab(
     "kubejs",
     "saros_create_addon",
@@ -7,7 +7,7 @@ if (checkConfigSwitch("saros-create-addon")) {
   );
 
   global.addon.SarosCreate = {};
-  let { SarosCreate } = global.addon;
+  const { SarosCreate } = global.addon;
 
   SarosCreate.itemIds = [
     "diamond_nugget",
@@ -29,8 +29,8 @@ if (checkConfigSwitch("saros-create-addon")) {
   ];
 
   StartupEvents.registry("item", (event) => {
-    for (let id of SarosCreate.itemIds) {
-      let itemObject = event
+    for (const id of SarosCreate.itemIds) {
+      const itemObject = event
         .create(id)
         .texture(`saros_create_addon:item/${id}`)
         .group("kubejs.saros_create_addon")
