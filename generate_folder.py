@@ -1,7 +1,7 @@
 import os
 
 while 1:
-    name = input("Project Name: ")
+    name = input("Project Name: ").title()
     folder_path = "src/" + name.replace(" ", "_")
 
     try:
