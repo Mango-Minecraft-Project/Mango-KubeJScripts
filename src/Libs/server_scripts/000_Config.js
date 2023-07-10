@@ -1,4 +1,4 @@
 // priority: 100
 
-const { CONFIG } = global.variable
-const { checkConfigSwitch } = global.functions.dev
+const { CONFIG } = global.variable;
+const { checkConfigSwitch } = global.functions.dev;

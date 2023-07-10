@@ -1,13 +1,13 @@
 // priority: 0
 
-if (checkConfigSwitch('dye-fluid')) {
-  let { createCreativeTab } = global.functions.dev
-  let { toAmount } = global.functions.fluid
+if (checkConfigSwitch("dye-fluid")) {
+  let { createCreativeTab } = global.functions.dev;
+  let { toAmount } = global.functions.fluid;
 
-  createCreativeTab('kubejs', 'dye_fluid', 'minecraft:lime_dye')
+  createCreativeTab("kubejs", "dye_fluid", "minecraft:lime_dye");
 
-  global.addon.DyeFluid = {}
-  let { DyeFluid } = global.addon
+  global.addon.DyeFluid = {};
+  let { DyeFluid } = global.addon;
 
   DyeFluid.colorTable = {
     red: 0x861f20,
@@ -25,40 +25,43 @@ if (checkConfigSwitch('dye-fluid')) {
     black: 0x090b10,
     gray: 0x32353b,
     light_gray: 0x74746e,
-    white: 0xc2c8d0
-  }
+    white: 0xc2c8d0,
+  };
 
-  DyeFluid.getFluid = (colorName, amount) => Fluid.of(`kubejs:${colorName}_dye_fluid`, toAmount(amount || 1000))
+  DyeFluid.getFluid = (colorName, amount) =>
+    Fluid.of(`kubejs:${colorName}_dye_fluid`, toAmount(amount || 1000));
 
-  StartupEvents.registry('fluid', event => {
+  StartupEvents.registry("fluid", (event) => {
     for (let [colorName, colorCode] of Object.entries(DyeFluid.colorTable)) {
-      let fluidObject = event.create(`${colorName}_dye_fluid`)
+      let fluidObject = event
+        .create(`${colorName}_dye_fluid`)
         .thickTexture(colorCode)
-        .flowingTexture('minecraft:block/water_flow')
-        .stillTexture('minecraft:block/water_still')
-        .tag('kubejs:dye_fluid')
-        .tag('kubejs:dye_fluid/fluid')
-        .tag('minecraft:water')
+        .flowingTexture("minecraft:block/water_flow")
+        .stillTexture("minecraft:block/water_still")
+        .tag("kubejs:dye_fluid")
+        .tag("kubejs:dye_fluid/fluid")
+        .tag("minecraft:water");
 
       fluidObject.flowingFluid
-        .tag('kubejs:dye_fluid')
-        .tag('kubejs:dye_fluid/fluid')
-        .tag('minecraft:water')
+        .tag("kubejs:dye_fluid")
+        .tag("kubejs:dye_fluid/fluid")
+        .tag("minecraft:water");
 
       fluidObject.bucketItem
-        .tag('kubejs:dye_fluid')
-        .tag('kubejs:dye_fluid/bucket')
-        .group('kubejs.dye_fluid')
+        .tag("kubejs:dye_fluid")
+        .tag("kubejs:dye_fluid/bucket")
+        .group("kubejs.dye_fluid");
     }
-  })
+  });
 
-  StartupEvents.registry('item', event => {
-    let dye_base = event.create('dye_base')
-      .texture('dye_fluid:item/color_base')
-      .tag('kubejs:dye_fluid')
-      .tag('kubejs:dye_fluid/dye_base')
-      .group('kubejs.dye_fluid')
+  StartupEvents.registry("item", (event) => {
+    let dye_base = event
+      .create("dye_base")
+      .texture("dye_fluid:item/color_base")
+      .tag("kubejs:dye_fluid")
+      .tag("kubejs:dye_fluid/dye_base")
+      .group("kubejs.dye_fluid");
 
-    dye_base.tag(Platform.isFabric() ? 'c:dye_base' : 'forge:dye/base')
-  })
+    dye_base.tag(Platform.isFabric() ? "c:dye_base" : "forge:dye/base");
+  });
 }
