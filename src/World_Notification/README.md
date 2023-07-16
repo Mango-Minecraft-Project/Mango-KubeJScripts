@@ -1,6 +1,7 @@
-# Global Notification | 廣域通知
+# World Notification | 世界通知
 
-廣域通知系列
+世界通知系列
+
 任何一個腳本都須搭配 [Global_Notification/Libs.js](./server_scripts/Global_Notification/Libs.js)
 
 ## 前置
