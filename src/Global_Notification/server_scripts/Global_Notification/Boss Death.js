@@ -1,6 +1,5 @@
 // priority: 0
 
-
 /**
  * Generate Entity Death World Notification
  *
@@ -19,7 +18,6 @@ function entityDeathNotify(
   borderColor,
   filterName
 ) {
-  // const entityName = Text.translate(`entity.${entityId.namespace}.${entityId.path}`).string
   EntityEvents.death(entityId, (event) => {
     const {
       server: { players },
