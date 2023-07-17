@@ -54,11 +54,12 @@ function entityDeathNotify(
     if (!$player) return;
 
     for (const player of players) {
-      playerNotify(player, {
+      player.notify({
         itemIcon: itemIcon,
         backgroundColor: backgroundColor,
         borderColor: borderColor,
         outlineColor: borderColor,
+        titleShadow: false,
         text: [
           Text.of("！Global Notify - Boss Has Been Killed！\n")
             .color(titleColor)
