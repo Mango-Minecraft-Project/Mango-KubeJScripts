@@ -5,7 +5,7 @@
  *
  * @param {Special.EntityType} entityId
  * @param {Special.Item} itemIcon
- * @param {Internal.Color | Color_} titleColor
+ * @param {Internal.Color} titleColor
  * @param {Internal.Color} backgroundColor
  * @param {Internal.Color} borderColor
  * @param {String} filterName
