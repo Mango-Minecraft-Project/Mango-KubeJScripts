@@ -27,7 +27,7 @@ function entityDeathNotify(
 
       if (displayName.string != "[wn-boss]") return;
 
-      playerNotify(player, {
+      player.notify({
         itemIcon: itemIcon,
         backgroundColor: backgroundColor,
         borderColor: borderColor,
