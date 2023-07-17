@@ -8,7 +8,6 @@
  * @param {Internal.Color} titleColor
  * @param {Internal.Color} backgroundColor
  * @param {Internal.Color} borderColor
- * @param {String} filterName
  * @param {Boolean} isDebug
  */
 function entityDeathNotify(
