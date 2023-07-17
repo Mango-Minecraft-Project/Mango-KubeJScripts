@@ -9,9 +9,7 @@
 function playerNotify(player, config) {
   player.notify(
     Notification.make((notification) => {
-      for (const [key, value] of Object.entries(config)) {
-        notification[key] = value;
-      }
+      Object.assign(notification, config);
     })
   );
 }
