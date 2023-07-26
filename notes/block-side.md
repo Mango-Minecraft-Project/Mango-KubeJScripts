@@ -4,28 +4,27 @@
 
 如果想讓方塊像原版熔爐一樣根據玩家方向放置  
 可以使用以下的方塊狀態(`block states`)
-- 方塊狀態
-  ```json
-  {
-    "variants": {
-      "facing=east": {
-        "model": "kubejs:block/{block_id}",
-        "y": 90
-      },
-      "facing=north": {
-        "model": "kubejs:block/{block_id}"
-      },
-      "facing=south": {
-        "model": "kubejs:block/{block_id}",
-        "y": 180
-      },
-      "facing=west": {
-        "model": "kubejs:block/{block_id}",
-        "y": 270
-      }
+```json
+{
+  "variants": {
+    "facing=east": {
+      "model": "kubejs:block/{block_id}",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "kubejs:block/{block_id}"
+    },
+    "facing=south": {
+      "model": "kubejs:block/{block_id}",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "kubejs:block/{block_id}",
+      "y": 270
     }
   }
-  ```
+}
+```
 
 ## 六面朝向（原版原木）
 
