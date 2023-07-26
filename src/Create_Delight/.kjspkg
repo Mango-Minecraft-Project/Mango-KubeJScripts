@@ -1,0 +1,9 @@
+{
+    "author": "EvanHsieh0415",
+    "description": "Way to implement Farmer's Delight recipes into Create. Requires Farmer's Delight.",
+    
+    "versions": [9],
+    "modloaders": ["forge", "fabric"],
+    "dependencies": ["mod:create", "mod:farmersdelight", "mod:kubejs_create"],
+    "incompatibilities": []
+}

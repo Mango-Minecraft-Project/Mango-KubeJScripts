@@ -1,0 +1,9 @@
+{
+    "author": "EvanHsieh0415",
+    "description": "Send World Notifactions",
+    
+    "versions": [9],
+    "modloaders": ["forge", "fabric"],
+    "dependencies": [],
+    "incompatibilities": []
+}
