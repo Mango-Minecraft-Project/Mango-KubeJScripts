@@ -26,34 +26,7 @@
 }
 ```
 
-## 六面朝向（原版原木）
-
-如果想讓方塊像原版的原木一樣根據玩家方向放置  
-可以使用以下的方塊狀態(`block states`)
-方塊狀態
-```json
-{
-  "variants": {
-    "axis=x": {
-      "model": "kubejs:block/{block_id}",
-      "x": 90,
-      "y": 90
-    },
-    "axis=y": {
-      "model": "kubejs:block/{block_id}"
-    },
-    "axis=z": {
-      "model": "kubejs:block/{block_id}",
-      "x": 90
-    }
-  }
-}
-```
-
----
-
-## 變數解釋
-
-- 方塊狀態
-  - `variants > facing=* > model > "kubejs:block/{block_id}"`  
-    方塊在此狀態下所使用的模型（`model`），這個案例中都只需填入一樣的值即可
+### 註：
+- `variants > facing=* > model > "kubejs:block/{block_id}"`  
+  方塊在此狀態下所使用的模型（`model`），這個案例中都只需填入一樣的值即可
+  `facing`意指方塊朝向
