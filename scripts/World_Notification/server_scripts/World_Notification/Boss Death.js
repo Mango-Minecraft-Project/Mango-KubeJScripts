@@ -25,7 +25,6 @@ function entityDeathNotify(
       for (const [key, value] of Object.entries(entityFilter)) {
         if (key == "nbt") {
           for (const [nbtKey, nbtValue] of Object.entries(value)) {
-            // console.log(entity.nbt[nbtKey], nbtValue);
             if (entity.nbt[nbtKey] != nbtValue) return;
           }
         } else if (entity[key] != value) return;
