@@ -1,6 +1,19 @@
 // priority: 0
 
 /**
+ *
+ * @param {Internal.Player} player
+ * @param {*} config
+ */
+function playerNotify(player, config) {
+  player.notify(
+    Notification.make((notification) => {
+      Object.assign(notification, config);
+    })
+  );
+}
+
+/**
  * Generate Entity Death World Notification
  *
  * @param {Special.EntityType} entityId
@@ -27,11 +40,12 @@ function entityDeathNotify(
 
       if (displayName.string != "[wn-boss]") return;
 
-      player.notify({
+      playerNotify(player, {
         itemIcon: itemIcon,
         backgroundColor: backgroundColor,
         borderColor: borderColor,
         outlineColor: borderColor,
+        textShadow: false,
         text: [
           Text.of("！World Notify - Boss Has Been Killed！\n")
             .color(titleColor)
@@ -54,14 +68,14 @@ function entityDeathNotify(
     if (!$player) return;
 
     for (const player of players) {
-      player.notify({
+      playerNotify(player, {
         itemIcon: itemIcon,
         backgroundColor: backgroundColor,
         borderColor: borderColor,
         outlineColor: borderColor,
-        titleShadow: false,
+        textShadow: false,
         text: [
-          Text.of("！Global Notify - Boss Has Been Killed！\n")
+          Text.of("World Notify - Boss Has Been Killed！\n")
             .color(titleColor)
             .bold(),
           Text.translate(
