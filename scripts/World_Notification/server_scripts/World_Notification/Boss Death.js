@@ -1,19 +1,6 @@
 // priority: 0
 
 /**
- *
- * @param {Internal.Player} player
- * @param {*} config
- */
-function playerNotify(player, config) {
-  player.notify(
-    Notification.make((notification) => {
-      Object.assign(notification, config);
-    })
-  );
-}
-
-/**
  * Generate Entity Death World Notification
  *
  * @param {Special.EntityType} entityId
@@ -21,7 +8,7 @@ function playerNotify(player, config) {
  * @param {Internal.Color} titleColor
  * @param {Internal.Color} backgroundColor
  * @param {Internal.Color} borderColor
- * @param {Boolean} isDebug
+ * @param {{}} entityFilter
  */
 function entityDeathNotify(
   entityId,
@@ -29,46 +16,24 @@ function entityDeathNotify(
   titleColor,
   backgroundColor,
   borderColor,
-  isDebug
+  entityFilter
 ) {
-  if (isDebug) {
-    ItemEvents.rightClicked("stick", (event) => {
-      const {
-        player,
-        item: { displayName },
-      } = event;
-
-      if (displayName.string != "[wn-boss]") return;
-
-      playerNotify(player, {
-        itemIcon: itemIcon,
-        backgroundColor: backgroundColor,
-        borderColor: borderColor,
-        outlineColor: borderColor,
-        textShadow: false,
-        text: [
-          Text.of("！World Notify - Boss Has Been Killed！\n")
-            .color(titleColor)
-            .bold(),
-          Text.translate(
-            `entity.${entityId.namespace}.${entityId.path}`
-          ).green(),
-          Text.of(" has been killed by "),
-          Text.of(player.displayName).gold(),
-        ],
-      });
-    });
-  }
-
   EntityEvents.death(entityId, (event) => {
-    const {
-      server: { players },
-      source: { player: $player },
-    } = event;
-    if (!$player) return;
+    const { server, source, entity } = event;
+    if (!source?.player) return;
+    if (entityFilter) {
+      for (const [key, value] of Object.entries(entityFilter)) {
+        if (key == "nbt") {
+          for (const [nbtKey, nbtValue] of Object.entries(value)) {
+            // console.log(entity.nbt[nbtKey], nbtValue);
+            if (entity.nbt[nbtKey] != nbtValue) return;
+          }
+        } else if (entity[key] != value) return;
+      }
+    }
 
-    for (const player of players) {
-      playerNotify(player, {
+    const notification = Notification.make((notification) => {
+      Object.assign(notification, {
         itemIcon: itemIcon,
         backgroundColor: backgroundColor,
         borderColor: borderColor,
@@ -82,9 +47,13 @@ function entityDeathNotify(
             `entity.${entityId.namespace}.${entityId.path}`
           ).green(),
           Text.of(" has been killed by "),
-          Text.of(player.displayName).gold(),
+          Text.of(source.player.displayName).gold(),
         ],
       });
+    });
+
+    for (const player of server.players) {
+      player.notify(notification);
     }
   });
 }
@@ -94,30 +63,26 @@ entityDeathNotify(
   "minecraft:dragon_head",
   "darkPurple",
   0xd9e4ac,
-  0x5d1d96,
-  true
+  0x5d1d96
 );
 entityDeathNotify(
   "minecraft:wither",
   "minecraft:wither_skeleton_skull",
   0xd81e3d,
   0x372027,
-  0x1d1316,
-  true
+  0x1d1316
 );
 entityDeathNotify(
   "minecraft:warden",
   "minecraft:reinforced_deepslate",
   "darkAqua",
   0x525255,
-  0x0c1116,
-  true
+  0x0c1116
 );
 entityDeathNotify(
   "minecraft:elder_guardian",
   "minecraft:sponge",
   "darkBlue",
   0x67ada8,
-  0x243a34,
-  true
+  0x243a34
 );
