@@ -23,11 +23,21 @@ function entityDeathNotify(
     if (!source?.player) return;
     if (entityFilter) {
       for (const [key, value] of Object.entries(entityFilter)) {
-        if (key == "nbt") {
-          for (const [nbtKey, nbtValue] of Object.entries(value)) {
-            if (entity.nbt[nbtKey] != nbtValue) return;
-          }
-        } else if (entity[key] != value) return;
+        switch (key) {
+          case "nbt":
+            for (const [nbtKey, nbtValue] of Object.entries(value)) {
+              if (entity.nbt[nbtKey] != nbtValue) return;
+            }
+            break;
+
+          case "tags":
+            if (!entity.tags.contains(value)) return;
+            break;
+
+          default:
+            if (entity[key] != value) return;
+            break;
+        }
       }
     }
 
