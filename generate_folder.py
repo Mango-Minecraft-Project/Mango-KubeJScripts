@@ -1,8 +1,8 @@
 import os
 
 while 1:
-    name = input("Project Name: ").title()
-    folder_path = "src/" + name.replace(" ", "_")
+    name = input("Project Name: ")
+    folder_path = "scripts/" + name.replace(" ", "_")
 
     try:
         os.mkdir(folder_path)
