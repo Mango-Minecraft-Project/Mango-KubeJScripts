@@ -7,6 +7,3 @@
 - 模組
   - Create | 機械動力
   - KubeJS Create
-- KubeJS本地通用庫
-  - `Libs/startup_scripts/UtilsLib.js`
-  - `Libs/server_scripts/000_Config.js`
