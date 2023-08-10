@@ -26,17 +26,23 @@ StartupEvents.registry("fluid", (event) => {
     const [colorName, colorCode] = color;
     const fluidObject = event
       .create(`${colorName}_dye_fluid`)
+      // .translationKey(`fluid.kubejs.${colorName}_dye_fluid`)
+      // .displayName(Text.translate(`fluid.kubejs.${colorName}_dye_fluid`).string)
       .thinTexture(colorCode)
       .tag("kubejs:dye_fluid")
       .tag("kubejs:dye_fluid/fluid")
       .tag("minecraft:water");
 
     fluidObject.flowingFluid
+      // .displayName(
+      //   Text.translate(`fluid.kubejs.${colorName}_dye_flowing_fluid`).string
+      // )
       .tag("kubejs:dye_fluid")
       .tag("kubejs:dye_fluid/fluid")
       .tag("minecraft:water");
 
     fluidObject.bucketItem
+      // .displayName(Text.translate(`item.kubejs.${colorName}_dye_bucket`).string)
       .tag("kubejs:dye_fluid")
       .tag("kubejs:dye_fluid/bucket");
   });
@@ -51,5 +57,5 @@ StartupEvents.registry("item", (event) => {
     .tag("kubejs:dye_fluid/dye_base")
     .group("kubejs.dye_fluid");
 
-  dye_base.tag(Platform.isFabric() ? "c:dye_base" : "forge:dye/base");
+  dye_base.tag(Platform.isForge() ? "forge:dye/base" : "c:dye_base");
 });

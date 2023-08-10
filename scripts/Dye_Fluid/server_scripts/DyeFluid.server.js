@@ -47,7 +47,7 @@ ServerEvents.recipes((event) => {
     create.filling(
       [`minecraft:${colorName}_dye`],
       [
-        "kubejs:dye_base",
+        Platform.isForge() ? "#forge:dye/base" : "#c:dye_base",
         Fluid.of(`kubejs:${colorName}_dye_fluid`, FluidAmounts.B),
       ]
     );

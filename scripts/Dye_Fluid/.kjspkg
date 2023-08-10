@@ -1,0 +1,9 @@
+{
+    "author": "MangoJellyPudding",
+    "description": "Craftable fluid dyes that can also be used for color mixing.",
+    
+    "versions": [9],
+    "modloaders": ["forge", "fabric"],
+    "dependencies": ["mod:create", "mode:kubejs_create"],
+    "incompatibilities": []
+}
