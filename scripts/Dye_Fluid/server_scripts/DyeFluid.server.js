@@ -35,22 +35,26 @@ ServerEvents.recipes((event) => {
 
   Object.keys(DyeFluid.colorTable).forEach((colorName) => {
     // dye[item] + water[fluid] = dye[fluid]
-    create.mixing(
-      [Fluid.of(`kubejs:${colorName}_dye_fluid`, FluidAmounts.B)],
-      [
-        `minecraft:${colorName}_dye`,
-        Fluid.of("minecraft:water", FluidAmounts.B),
-      ]
-    );
+    create
+      .mixing(
+        [Fluid.of(`kubejs:${colorName}_dye_fluid`, FluidAmounts.B)],
+        [
+          `minecraft:${colorName}_dye`,
+          Fluid.of("minecraft:water", FluidAmounts.B),
+        ]
+      )
+      .id(`kubejs:mixing/${colorName}_dye_fluid`);
 
     // dye[fluid] + dye_base[item] = dye[item]
-    create.filling(
-      [`minecraft:${colorName}_dye`],
-      [
-        Platform.isForge() ? "#forge:dye/base" : "#c:dye_base",
-        Fluid.of(`kubejs:${colorName}_dye_fluid`, FluidAmounts.B),
-      ]
-    );
+    create
+      .filling(
+        [`minecraft:${colorName}_dye`],
+        [
+          Platform.isForge() ? "#forge:dye/base" : "#c:dye_base",
+          Fluid.of(`kubejs:${colorName}_dye_fluid`, FluidAmounts.B),
+        ]
+      )
+      .id(`kubejs:filling/${colorName}_dye`);
 
     // color palette
     if (colorName in DyeFluid.colorPalette) {
@@ -63,21 +67,25 @@ ServerEvents.recipes((event) => {
         );
         const totalCount = ingredients.length;
 
-        create.mixing(
-          [
-            Fluid.of(
-              `kubejs:${colorName}_dye_fluid`,
-              100 * FluidAmounts.MB * totalCount
-            ),
-          ],
-          inputs
-        );
+        create
+          .mixing(
+            [
+              Fluid.of(
+                `kubejs:${colorName}_dye_fluid`,
+                100 * FluidAmounts.MB * totalCount
+              ),
+            ],
+            inputs
+          )
+          .id(`kubejs:mixing/palette_${colorName}_dye`);
       });
     }
   });
 
-  minecraft.crafting_shapeless("kubejs:dye_base", [
-    "minecraft:string",
-    "#minecraft:wool",
-  ]);
+  minecraft
+    .crafting_shapeless("kubejs:dye_base", [
+      "minecraft:string",
+      "#minecraft:wool",
+    ])
+    .id(`kubejs:crafting_shapeless/dye_base`);
 });
