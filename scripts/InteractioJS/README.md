@@ -5,3 +5,7 @@
 原網址：
 * [CurseForge - MaxNeedsSnacks/Interactio](https://www.curseforge.com/minecraft/mc-mods/interactio)
 * [Github - MaxNeedsSnacks/Interactio](https://github.com/MaxNeedsSnacks/Interactio)
+
+# 前置
+
+- 無
