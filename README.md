@@ -1,11 +1,15 @@
 # Mango KubeJScripts
 
 - 開發/測試環境:
-```yaml
-Minecraft:
-  版本: 1.19.2
-  模組載入器: Forge
+```toml
+[Minecraft.Main]
+version = 1.20.1
+mod_loader = LexForge
 
-電腦:
-  系統: Windows 10
+[Minecraft.Mods]
+name = KubeJS
+version = 6.1 
+
+[Computer]
+system = Windows 10
 ```
