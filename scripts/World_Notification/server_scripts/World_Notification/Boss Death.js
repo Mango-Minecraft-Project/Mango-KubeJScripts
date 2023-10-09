@@ -8,38 +8,20 @@
  * @param {Internal.Color} titleColor
  * @param {Internal.Color} backgroundColor
  * @param {Internal.Color} borderColor
- * @param {{}} entityFilter
  */
 function entityDeathNotify(
   entityId,
   itemIcon,
   titleColor,
   backgroundColor,
-  borderColor,
-  entityFilter
+  borderColor
 ) {
   EntityEvents.death(entityId, (event) => {
-    const { server, source, entity } = event;
-    if (!source?.player) return;
-    if (entityFilter) {
-      for (const [key, value] of Object.entries(entityFilter)) {
-        switch (key) {
-          case "nbt":
-            for (const [nbtKey, nbtValue] of Object.entries(value)) {
-              if (entity.nbt[nbtKey] != nbtValue) return;
-            }
-            break;
-
-          case "tags":
-            if (!entity.tags.contains(value)) return;
-            break;
-
-          default:
-            if (entity[key] != value) return;
-            break;
-        }
-      }
-    }
+    const {
+      server,
+      source: { player: $player },
+    } = event;
+    if (!$player) return;
 
     const notification = Notification.make((notification) => {
       Object.assign(notification, {
@@ -56,7 +38,7 @@ function entityDeathNotify(
             `entity.${entityId.namespace}.${entityId.path}`
           ).green(),
           Text.of(" has been killed by "),
-          Text.of(source.player.displayName).gold(),
+          Text.of($player.displayName).gold(),
         ],
       });
     });
