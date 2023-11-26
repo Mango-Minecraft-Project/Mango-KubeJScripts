@@ -1,7 +1,7 @@
 import os
 
 while 1:
-    name = input("Project Name: ")
+    name = input(">>> Script Name:\n... ")
     folder_path = "scripts/" + name.replace(" ", "_")
 
     try:
@@ -16,9 +16,7 @@ while 1:
             "## 前置\n"
             "- 模組\n"
             "  - ...\n"
-            "- KubeJS本地通用庫\n"
-            "  - ..."
         )
 
-    if input("continue?\n  ").lower() in {"n", "no"}:
+    if input(">>> continue?\n... ").lower() in {"n", "no"}:
         break
