@@ -1,7 +1,9 @@
-# World Notification | 世界通知
+# World Notification｜世界通知
+
+World Notifications.  
 
 世界通知系列
 
-## 前置
-- 模組
-  - KubeJS 6.1+
+## Dependencies｜前置
+
+- None｜無
