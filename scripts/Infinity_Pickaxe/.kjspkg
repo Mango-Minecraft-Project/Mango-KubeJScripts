@@ -1,8 +1,9 @@
 {
   "author": "EvanHsieh0415",
-  "description": "Send World Notifactions",
+  "description": "Infinitely destroys a block's pickaxe.",
   "versions": [
-    9, 10
+    9,
+    10
   ],
   "modloaders": [
     "forge"

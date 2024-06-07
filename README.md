@@ -1,15 +1,11 @@
 # Mango KubeJScripts
 
-- 開發/測試環境:
-```toml
-[Minecraft.Main]
-version = 1.20.1
-mod_loader = LexForge
+## Develope / Test Environ:
 
-[Minecraft.Mods]
-name = KubeJS
-version = 6.1 
-
-[Computer]
-system = Windows 10
-```
+- Minecraft
+  - Version: 1.20.1
+  - Mod Loader: NeoForge
+- Mods
+  - KubeJS 6.1+
+- Computer System
+  - OS: Windows 10

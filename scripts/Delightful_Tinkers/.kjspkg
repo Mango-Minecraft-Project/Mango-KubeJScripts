@@ -1,15 +1,15 @@
 {
   "author": "EvanHsieh0415",
-  "description": "Adjustable Color Dye Fluid",
+  "description": "是Bob氩's Delightful Tinkers KubeJS Rewrite Version",
   "versions": [
-    9,
-    10
+    8
   ],
   "modloaders": [
     "forge"
   ],
   "dependencies": [
     "mod:create",
-    "mode:kubejs_create"
+    "mod:farmersdelight",
+    "mod:kubejs_create"
   ]
 }

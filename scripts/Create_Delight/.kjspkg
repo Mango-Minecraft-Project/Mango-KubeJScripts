@@ -1,9 +1,11 @@
 {
-    "author": "EvanHsieh0415",
-    "description": "Way to implement Farmer's Delight recipes into Create. Requires Farmer's Delight.",
-    
-    "versions": [9],
-    "modloaders": ["forge", "fabric"],
-    "dependencies": ["mod:create", "mod:farmersdelight", "mod:kubejs_create"],
-    "incompatibilities": []
+  "author": "EvanHsieh0415",
+  "description": "Recordable spawn point, right-click the name tag to return to the record point.",
+  "versions": [
+    9,
+    10
+  ],
+  "modloaders": [
+    "forge"
+  ]
 }

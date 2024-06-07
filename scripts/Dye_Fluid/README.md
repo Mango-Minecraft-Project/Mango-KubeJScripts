@@ -1,11 +1,11 @@
-# Dye Fluid | 流體染料
+# Dye Fluid｜流體染料
 
-<big> KubeJS 6.1+ Only </big>
-
+Adjustable Color Dye Fluid  
 可調色的染料流體
 
-## 前置
+## Dependencies｜前置
 
-- 模組
-  - Create | 機械動力
-  - KubeJS Create
+### Mods｜模組
+
+- Create｜動力機械
+- KubeJS Create

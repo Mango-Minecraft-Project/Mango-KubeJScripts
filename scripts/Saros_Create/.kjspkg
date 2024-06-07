@@ -1,6 +1,6 @@
 {
   "author": "EvanHsieh0415",
-  "description": "Adjustable Color Dye Fluid",
+  "description": "Saro's Power Machine by Sarocesch KubeJS Remake",
   "versions": [
     9,
     10
@@ -9,7 +9,6 @@
     "forge"
   ],
   "dependencies": [
-    "mod:create",
-    "mode:kubejs_create"
+    "mod:create"
   ]
 }
