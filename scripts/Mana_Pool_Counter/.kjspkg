@@ -1,6 +1,6 @@
 {
   "author": "EvanHsieh0415",
-  "description": "Adjustable Color Dye Fluid",
+  "description": "Right-click on a block to display the mana content of the mana pool.",
   "versions": [
     9,
     10
@@ -9,7 +9,6 @@
     "forge"
   ],
   "dependencies": [
-    "mod:create",
-    "mode:kubejs_create"
+    "mod:botania"
   ]
 }

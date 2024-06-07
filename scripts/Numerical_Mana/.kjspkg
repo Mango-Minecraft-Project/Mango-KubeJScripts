@@ -1,0 +1,16 @@
+{
+  "author": "EvanHsieh0415, FalAut",
+  "description": "Showing Numerical Mana information in Jade",
+  "versions": [
+    9,
+    10
+  ],
+  "modloaders": [
+    "forge"
+  ],
+  "dependencies": [
+    "mod:jade",
+    "mod:kubejsadditions",
+    "mod:botania"
+  ]
+}

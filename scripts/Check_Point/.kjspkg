@@ -1,6 +1,6 @@
 {
   "author": "EvanHsieh0415",
-  "description": "Adjustable Color Dye Fluid",
+  "description": "Link some of the Farmer's Delight recipes to the Create",
   "versions": [
     9,
     10
@@ -10,6 +10,7 @@
   ],
   "dependencies": [
     "mod:create",
-    "mode:kubejs_create"
+    "mod:farmersdelight",
+    "mod:kubejs_create"
   ]
 }
