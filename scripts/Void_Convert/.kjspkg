@@ -1,0 +1,11 @@
+{
+  "author": "EvanHsieh0415, FalAut",
+  "description": "Transforms items in the void",
+  "versions": [
+    9,
+    10
+  ],
+  "modloaders": [
+    "forge"
+  ]
+}
