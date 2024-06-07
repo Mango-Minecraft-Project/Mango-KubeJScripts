@@ -1,0 +1,11 @@
+{
+  "author": "EvanHsieh0415, FalAut",
+  "description": "Make Climbing Faster",
+  "versions": [
+    9,
+    10
+  ],
+  "modloaders": [
+    "forge"
+  ]
+}
