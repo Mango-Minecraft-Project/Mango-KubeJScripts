@@ -1,5 +1,7 @@
 # Numerical Mana In Jade｜可數的魔力
 
+![](1.png)
+
 Showing Numerical Mana information in Jade
 
 ---
