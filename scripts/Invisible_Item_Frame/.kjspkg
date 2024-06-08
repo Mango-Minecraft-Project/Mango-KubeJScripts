@@ -1,0 +1,10 @@
+{
+  "author": "EvanHsieh0415",
+  "description": "Make item can be invisible",
+  "versions": [
+    9, 10
+  ],
+  "modloaders": [
+    "forge"
+  ]
+}
