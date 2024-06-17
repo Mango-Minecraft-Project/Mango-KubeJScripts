@@ -5,7 +5,7 @@ import theme from "./definitions/theme";
 import plugins from "./definitions/plugins";
 
 export default defineUserConfig({
-  base: "/",
+  base: "/Mango-KubeJScripts/",
   bundler: viteBundler(),
   head: [["meta", { charset: "utf-8" }]],
   theme,
