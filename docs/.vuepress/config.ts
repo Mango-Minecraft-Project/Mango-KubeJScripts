@@ -12,4 +12,9 @@ export default defineUserConfig({
   plugins,
   lang: "zh-TW",
   title: "芒果的 KubeJS 筆記本",
+  extendsPage: (page) => {
+    page.routeMeta = {
+      title: page.title,
+    }
+  }
 });

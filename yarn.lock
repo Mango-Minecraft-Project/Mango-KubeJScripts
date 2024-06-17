@@ -598,6 +598,14 @@
     "@vueuse/core" "^10.10.0"
     vue "^3.4.27"
 
+"@vuepress/plugin-catalog@^2.0.0-rc.34":
+  version "2.0.0-rc.34"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-catalog/-/plugin-catalog-2.0.0-rc.34.tgz#ea8c56ceeb96612ae1c5de19e6007c106bc8990e"
+  integrity sha512-AmUl8MtuPYlv18eWUawxcsUxM0g6c1vLQ1Sgp8eKyfKdvXgvrQQqXMsmv/J30er+qm7/1usNO8IbCo5UfoshHA==
+  dependencies:
+    "@vuepress/helper" "2.0.0-rc.34"
+    vue "^3.4.27"
+
 "@vuepress/plugin-copy-code@2.0.0-rc.34":
   version "2.0.0-rc.34"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-copy-code/-/plugin-copy-code-2.0.0-rc.34.tgz#dcd28360d84a50cc957fae902bf3291d89aa1caa"
@@ -659,6 +667,14 @@
   dependencies:
     "@vuepress/highlighter-helper" "2.0.0-rc.34"
     prismjs "^1.29.0"
+
+"@vuepress/plugin-search@^2.0.0-rc.34":
+  version "2.0.0-rc.34"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-2.0.0-rc.34.tgz#678736e1806e815d7aa62ca04e87bc7f1d82f708"
+  integrity sha512-J8mfzTfTIGyaTsp9C5dBY4u7HrzwCGlFxC1HUIyGXLCrOyEU83zZ4HNivJdawKLeT5MBWqN8oo+8s8DA7m+dVg==
+  dependencies:
+    chokidar "^3.6.0"
+    vue "^3.4.27"
 
 "@vuepress/plugin-seo@2.0.0-rc.34":
   version "2.0.0-rc.34"
