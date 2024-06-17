@@ -1,0 +1,22 @@
+name: Deploy site
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Deploy:
+    name: Deploy to Github Pages 🚀
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      pages: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
